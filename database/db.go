@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/riju-stone/go-rest/models"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -16,7 +17,7 @@ type DbInstance struct {
 var Database DbInstance
 
 func ConnectDB() {
-	db, err := gorm.Open(sqlite.Open("data.db"), &gorm.Config{})
+	db, err := gorm.Open(sqlite.Open("api-data.db"), &gorm.Config{})
 
 	if err != nil {
 		log.Fatal("Database Connection Failed...\n", err.Error())
@@ -28,5 +29,6 @@ func ConnectDB() {
 	log.Println("Running Migrations...")
 
 	//TODO: Handle Migrations
+	db.AutoMigrate(&models.User{}, &models.Product{}, &models.Order{})
 	Database = DbInstance{Db: db}
 }
