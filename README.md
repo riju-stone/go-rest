@@ -1,2 +1,2 @@
-# go-auth
-Role-based Authentication API using JWT &amp; Go
+# go-rest-ap
+A complete API written in Go, that does almost everything 😉
