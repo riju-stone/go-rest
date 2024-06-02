@@ -2,7 +2,11 @@ module github.com/riju-stone/go-rest-api
 
 go 1.22.1
 
+require github.com/gorilla/mux v1.8.1
+
 require (
-	github.com/gorilla/mux v1.8.1 // indirect
-	github.com/wricardo/gomux v0.0.0-20191125190231-fba15e6e61d9 // indirect
+	github.com/go-sql-driver/mysql v1.8.1
+	github.com/joho/godotenv v1.5.1
 )
+
+require filippo.io/edwards25519 v1.1.0 // indirect
